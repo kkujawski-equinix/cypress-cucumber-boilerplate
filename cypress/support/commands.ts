@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+declare namespace Cypress {
+    interface Chainable {
+        /**
+         * Custom command to select DOM element by data-cy attribute.
+         * @example cy.dataCy('greeting')
+         */
+        getByDataCy(value: string): Chainable<Element>;
+        getByDataClass(value: string): Chainable<Element>;
+    }
+}
+
+Cypress.Commands.add('getByDataCy', (selector): any => {
+    return cy.get(`[data-cy=${selector}]`);
+});
+
+// @ts-ignore
+Cypress.Commands.add('getByDataClass', (selector) => {
+    return cy.get(`.${selector}`);
+});
