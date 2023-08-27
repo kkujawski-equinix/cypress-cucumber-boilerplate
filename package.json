@@ -1,6 +1,7 @@
 {
   "name": "cypress-cucumber-boilerplate",
   "version": "2.2.0",
+  "type": "module",
   "description": "This project is meant to be a kind of template to start working with Cucumber and Cypress just cloning the project.",
   "main": "index.js",
   "scripts": {
@@ -23,6 +24,8 @@
     "@shelex/cypress-allure-plugin": "^2.40.0",
     "cypress": "^12.17.4",
     "esbuild": "^0.19.2",
-    "multiple-cucumber-html-reporter": "^3.4.0"
+    "multiple-cucumber-html-reporter": "^3.4.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }
